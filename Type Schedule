@@ -1,0 +1,27 @@
+class TypeSchedule():
+    def __init__(self, type: int, description: str):
+        self.__type = type
+        self.__description = description
+
+    # -------- TYPE --------
+    @property
+    def type(self) -> int:
+        return self.__type
+
+    @type.setter
+    def type(self, value: int):
+        self.__type = value
+
+    # -------- DESCRIPTION --------
+    @property
+    def description(self) -> str:
+        return self.__description
+
+    @description.setter
+    def description(self, value: str):
+        self.__description = value
+
+    # -------- __STR__ --------
+    def __str__(self):
+        return (f"Type: {self.type},\n"
+                f"Description: {self.description}")
