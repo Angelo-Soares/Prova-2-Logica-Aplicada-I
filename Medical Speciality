@@ -1,0 +1,27 @@
+class MedicalSpeciality():
+    def __init__(self, cod_speciality: int, medical_speciality: str):
+        self.__cod_speciality = cod_speciality
+        self.__medical_speciality = medical_speciality
+
+    # -------- TYPE --------
+    @property
+    def cod_speciality(self) -> int:
+        return self.__cod_speciality
+
+    @cod_speciality.setter
+    def cod_speciality(self, value: int):
+        self.__cod_speciality = value
+
+    # -------- DESCRIPTION --------
+    @property
+    def medical_speciality(self) -> str:
+        return self.__medical_speciality
+
+    @medical_speciality.setter
+    def medical_speciality(self, value: str):
+        self.__medical_speciality = value
+
+    # -------- __STR__ --------
+    def __str__(self):
+        return (f"Type: {self.cod_speciality},\n"
+                f"Description: {self.medical_speciality}")
