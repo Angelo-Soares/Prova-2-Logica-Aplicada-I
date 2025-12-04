@@ -1,0 +1,56 @@
+from datetime import datetime
+from schedule import Schedule
+
+class MedicalAppoints(Schedule):
+    def __init__(self, date: datetime, cod_doctor: int, type: int,
+                 cod: int, status: str):
+        super().__init__(date, cod_doctor, type)
+        self.__cod = cod
+        self.__status = status
+
+    # -------- COD --------
+    @property
+    def cod(self) -> int:
+        return self.__cod
+
+    @cod.setter
+    def cod(self, value: int):
+        self.__cod = value
+
+    # -------- STATUS --------
+    @property
+    def status(self) -> str:
+        return self.__status
+
+    @status.setter
+    def status(self, value: str):
+        self.__status = value
+
+# Metodos
+
+    def __str__(self):
+        return (f"Data: {self.__date}\n"
+                f"Codigo Doutor: {self.__cod_doctor}\n"
+                f"Tipo: {self.__type}\n"
+                f"Codigo: {self.__cod}\n"
+                f"Status: {self.__status}")
+
+    def update_schedule(self, update_code: int) -> int:
+        if update_code == 1:
+            self.status = "Atualizado"
+            print(f"Status atualizado para: {self.status}")
+            return 1
+
+        elif update_code == 2:
+            self.cod_doctor = 100
+            print(f"Código do doutor atualizado para: {self.cod_doctor}")
+            return 1
+
+        elif update_code == 3:
+            self.date = datetime(2026, 12, 20, 10, 0)
+            print(f"Data atualizada para: {self.date}")
+            return 1
+
+        else:
+            print("Código de atualização inválido!")
+            return 0
