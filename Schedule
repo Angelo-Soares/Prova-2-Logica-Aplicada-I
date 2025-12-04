@@ -1,0 +1,53 @@
+from datetime import datetime
+
+class Schedule():
+    def __init__(self, date: datetime, cod_doctor: int, type: int):
+        self.__date = date
+        self.__cod_doctor = cod_doctor
+        self.__type = type
+
+    # -------- DATE --------
+    @property
+    def date(self) -> datetime:
+        return self.__date
+
+    @date.setter
+    def date(self, value: datetime):
+        self.__date = value
+
+    # -------- COD DOCTOR --------
+    @property
+    def cod_doctor(self) -> int:
+        return self.__cod_doctor
+
+    @cod_doctor.setter
+    def cod_doctor(self, value: int):
+        self.__cod_doctor = value
+
+    # -------- TYPE --------
+    @property
+    def type(self) -> int:
+        return self.__type
+
+    @type.setter
+    def type(self, value: int):
+        self.__type = value
+
+# Metodos
+
+    def update_schedule(self, update_code: int) -> int:
+        if update_code == 1:
+            self.date = datetime(2026, 12, 20, 10, 0)
+            print(f"Data atualizada para: {self.date}")
+            return 1
+        elif update_code == 2:
+            self.cod_doctor = 100
+            print(f"Código do doutor atualizado para: {self.cod_doctor}")
+            return 1
+        elif update_code == 3:
+            self.type = 2
+            print(f"Tipo atualizado para: {self.type}")
+            return 1
+        else:
+            print("Código de atualização inválido.")
+            return 0
