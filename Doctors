@@ -1,0 +1,72 @@
+class Doctors():
+    def __init__(self, name: str, cod_doctor: int, cod_speciality: int, crm: int, phone: int, email: str):
+        self.__name = name
+        self.__cod_doctor = cod_doctor
+        self.__cod_speciality = cod_speciality
+        self.__crm = crm
+        self.__phone = phone
+        self.__email = email
+
+    # -------- NAME --------
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, value: str):
+        self.__name = value
+
+    # -------- COD DOCTOR --------
+    @property
+    def cod_doctor(self) -> int:
+        return self.__cod_doctor
+
+    @cod_doctor.setter
+    def cod_doctor(self, value: int):
+        self.__cod_doctor = value
+
+    # -------- COD SPECIALITY --------
+    @property
+    def cod_speciality(self) -> int:
+        return self.__cod_speciality
+
+    @cod_speciality.setter
+    def cod_speciality(self, value: int):
+        self.__cod_speciality = value
+
+    # -------- CRM --------
+    @property
+    def crm(self) -> int:
+        return self.__crm
+
+    @crm.setter
+    def crm(self, value: int):
+        self.__crm = value
+
+    # -------- PHONE --------
+    @property
+    def phone(self) -> int:
+        return self.__phone
+
+    @phone.setter
+    def phone(self, value: int):
+        self.__phone = value
+
+    # -------- EMAIL --------
+    @property
+    def email(self) -> str:
+        return self.__email
+
+    @email.setter
+    def email(self, value: str):
+        self.__email = value
+
+# Metodos
+
+    def __str__(self):
+        return (f"Nome: {self.__name}\n"
+                f"Codigo Doutor: {self.__cod_doctor}\n"
+                f"Codigo de Especialidade: {self.__cod_speciality}\n"
+                f"CRM: {self.__crm}\n"
+                f"Telefone: {self.__phone}\n"
+                f"Email: {self.__email}\n")
