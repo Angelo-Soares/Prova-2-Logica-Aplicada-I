@@ -1,0 +1,136 @@
+from datetime import date
+
+class Users():
+    def __init__(self, name: str, cpf: int, address: str, address_number: int,
+                 address_complement: str, dt_birth: date, phone: int, email: str,
+                 type_user: str, user_name: str, password: str):
+        self.__name = name
+        self.__cpf = cpf
+        self.__address = address
+        self.__address_number = address_number
+        self.__address_complement = address_complement
+        self.__dt_birth = dt_birth
+        self.__phone = phone
+        self.__email = email
+        self.__type_user = type_user
+        self.__user_name = user_name
+        self.__password = password
+
+    # -------- NAME --------
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, value: str):
+        self.__name = value
+
+    # -------- CPF --------
+    @property
+    def cpf(self) -> int:
+        return self.__cpf
+
+    @cpf.setter
+    def cpf(self, value: int):
+        self.__cpf = value
+
+    # -------- ADDRESS --------
+    @property
+    def address(self) -> str:
+        return self.__address
+
+    @address.setter
+    def address(self, value: str):
+        self.__address = value
+
+    # -------- ADDRESS NUMBER --------
+    @property
+    def address_number(self) -> int:
+        return self.__address_number
+
+    @address_number.setter
+    def address_number(self, value: int):
+        self.__address_number = value
+
+    # -------- ADDRESS COMPLEMENT --------
+    @property
+    def address_complement(self) -> str:
+        return self.__address_complement
+
+    @address_complement.setter
+    def address_complement(self, value: str):
+        self.__address_complement = value
+
+    # -------- BIRTH DATE --------
+    @property
+    def dt_birth(self) -> date:
+        return self.__dt_birth
+
+    @dt_birth.setter
+    def dt_birth(self, value: date):
+        self.__dt_birth = value
+
+    # -------- PHONE --------
+    @property
+    def phone(self) -> int:
+        return self.__phone
+
+    @phone.setter
+    def phone(self, value: int):
+        self.__phone = value
+
+    # -------- EMAIL --------
+    @property
+    def email(self) -> str:
+        return self.__email
+
+    @email.setter
+    def email(self, value: str):
+        self.__email = value
+
+    # -------- TYPE USER --------
+    @property
+    def type_user(self) -> str:
+        return self.__type_user
+
+    @type_user.setter
+    def type_user(self, value: str):
+        self.__type_user = value
+
+    # -------- USER NAME --------
+    @property
+    def user_name(self) -> str:
+        return self.__user_name
+
+    @user_name.setter
+    def user_name(self, value: str):
+        self.__user_name = value
+
+    # -------- PASSWORD --------
+    @property
+    def password(self) -> str:
+        return self.__password
+
+    @password.setter
+    def password(self, value: str):
+        self.__password = value
+
+# Metodos
+
+    def __str__(self):
+        return (f"Nome: {self.__name}\n"
+                f"CPF: {self.__cpf}\n"
+                f"Endereco: {self.__email}\n"
+                f"Numero de Endereco: {self.__address_number}\n"
+                f"Complemento: {self.__address_complement}\n"
+                f"Data de Nascimento: {self.__dt_birth}\n"
+                f"Telefone: {self.__phone}\n"
+                f"Email: {self.__email}\n"
+                f"Tipo de Usuario: {self.__type_user}\n"
+                f"Nome de Usuario: {self.user_name}\n"
+                f"Senha: {self.password}")
+
+    def updatePerson(self, new_number: int) -> int:
+        # Como no Diagrama de Classe estava para retornar um inteiro, vou considerar que o usuario pode alterar o telefone como alternativa.
+        self.__phone = new_number
+        print(f"Dados atualizados. Novo número: {self.__phone}")
